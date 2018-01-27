@@ -34,10 +34,20 @@
 		],
 		"name2": "Teaching Assistant / Research Assistant",
 		"list": [
-			"Classes: Design Thinking, Information Systems Analysis and Management, Client Side Web Development, Capstone Project",
+			"Classes: Design Thinking, Information Systems Analysis and Management, Client Side Web Development, Capstone Project, Calling BS in the Age of Big Data",
 			"Research Assistant for the Pew Charitable Trusts on projects assessing and visualizing scholarly impact",
 			"Research Assistant for JSTOR building tools to visualize and explore their archives of scholarly publications",
 			"Research Assistant for Pacific Northwest National Laboratory developing and analyzing algorithms for community detection in large networks"
+		]
+	},
+	{
+		"name": "Microsoft Research AI",
+		"dates": [
+			{"start": "June 2017", "end": "September 2017"}
+		],
+		"name2": "Summer Research Intern",
+		"list": [
+			"Worked on a data analysis and machine learning project to study and predict how people use language around commitments in written communication"
 		]
 	},
 	{

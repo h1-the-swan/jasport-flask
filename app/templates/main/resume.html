@@ -1,8 +1,21 @@
 {% extends 'layouts/base.html' %}
 
+{% block custom_head_tags %}
+	<style type="text/css" media="screen">
+		.container.resume .row {
+			max-width: 90%;
+		}
+		
+		.resume ul {
+			list-style-type: disc;
+			list-style-position: inside;
+		}
+	</style>
+{% endblock custom_head_tags %}
+
 {% block content %}
 	
-<div class="ui stackable grid container">
+<div class="ui stackable centered grid container resume">
 	<div class="row" id="page-header">
 		<div class="eleven wide column">
 			<div class="ui basic segment">
