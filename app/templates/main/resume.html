@@ -19,12 +19,84 @@
 		</div>
 	</div>
 
-	<div class="resume divided row" id="resume_education">
-		{% include "main/resume_education.html" %}
+	<div class="resume divided row" id="resume-education">
+		<div class="two wide column">
+			<h3 class="header">Education</h3>
+		</div>
+
+		<div class="fourteen wide right floated column">
+			<div class="ui items">
+				{% for item in resume_data['Education'] %}
+				<div class="item">
+					<div class="content">
+						<h3 class="header">{{item.name}}</h3>
+						{% for dt in item.dates %}
+							<p class="right floated">{{dt.start}} — {{dt.end}}</p>
+						{% endfor %}
+						<div class="meta">
+							<h5 class="sub header">{{item.name2}}</h5>
+						</div>
+						<div class="description">
+							<ul>
+							{% for li in item.list %}
+								<li>{{li}}</li>
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+		  </div>
+		</div>
+	</div>
+		  	
+
+
+	<div class="resume divided row" id="resume-work">
+		<div class="two wide column">
+			<h3 class="header">Work Experience</h3>
+		</div>
+
+		<div class="fourteen wide right floated column">
+			<div class="ui items">
+				{% for item in resume_data['Work Experience'] %}
+				<div class="item">
+					<div class="content">
+						<h3 class="header">{{item.name}}</h3>
+						{% for dt in item.dates %}
+							<p class="right floated">{{dt.start}} — {{dt.end}}</p>
+						{% endfor %}
+						<div class="meta">
+							<h5 class="sub header">{{item.name2}}</h5>
+						</div>
+						<div class="description">
+							<ul>
+							{% for li in item.list %}
+								<li>{{li}}</li>
+							{% endfor %}
+							</ul>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+		  </div>
+		</div>
 	</div>
 
-	<div class="resume divided row" id="resume_work">
-		{% include "main/resume_work.html" %}
+
+	<div class="resume divided row" id="resume-skills">
+		<div class="two wide column">
+			<h3 class="header">Skills</h3>
+		</div>
+
+		<div class="fourteen wide right floated column">
+			<ul class="ui items">
+				{% for item in resume_data['Skills'] %}
+				<li class="item">{{item}}</li>
+				{% endfor %}
+		  </ul>
+		</div>
 	</div>
+
 </div>
 {% endblock content %}

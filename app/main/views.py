@@ -12,8 +12,8 @@ def index():
 
 @main.route('/resume')
 def resume():
-
-    resume_data_fname = basedir + url_for('main.static', filename='data/resume/resume-data.json')
+    # resume_data_fname = basedir + url_for('main.static', filename='data/resume/resume-data.json')
+    resume_data_fname = basedir + url_for('static', filename='data/resume/resume-data.json')
     with open(resume_data_fname, 'r') as f:
         resume_data = json.load(f)
     return render_template('main/resume.html', resume_data=resume_data)

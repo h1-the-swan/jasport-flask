@@ -64,6 +64,7 @@ def create_app(config_name):
     # Create app blueprints
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
+    app.blueprints['main'].static_folder = app.static_folder
 
     # from .account import account as account_blueprint
     # app.register_blueprint(account_blueprint, url_prefix='/account')
