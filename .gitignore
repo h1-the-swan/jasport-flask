@@ -15,4 +15,5 @@ dist
 dump.rdb
 .vscode/
 
-jas*.jpg
+**/images/*.png
+**/images/*.jpg
