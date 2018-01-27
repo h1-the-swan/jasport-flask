@@ -1,6 +1,7 @@
 {% extends 'layouts/base.html' %}
 
 {% block content %}
+	
 <div class="ui stackable grid container">
 	<div class="row" id="page-header">
 		<div class="eleven wide column">
@@ -18,20 +19,12 @@
 		</div>
 	</div>
 
-	<div class="row" id="content">
-		<div class="eleven wide column">
-		{% include "main/projects.html" %}
-		</div>
+	<div class="resume divided row" id="resume_education">
+		{% include "main/resume_education.html" %}
+	</div>
 
-		<div class="four wide right floated column">
-			<h4 class="ui header">Contact</h4>
-			<ul>
-				<li>jporteno[@]uw[.]edu</li>
-				<li>Twitter: <a href="http://twitter.com/jportenoy" target="_blank">@jportenoy</a></li>
-				<li>Github: <a href="https://github.com/h1-the-swan" target="_blank">h1-the-swan</a></li>
-				<li><a href="https://www.linkedin.com/in/jason-portenoy/" target="_blank">LinkedIn</a></li>
-			</ul>
-		</div>
+	<div class="resume divided row" id="resume_work">
+		{% include "main/resume_work.html" %}
 	</div>
 </div>
-{% endblock %}
+{% endblock content %}
