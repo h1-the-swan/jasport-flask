@@ -10,6 +10,11 @@
 			list-style-type: disc;
 			list-style-position: inside;
 		}
+
+		.resume .dates {
+			clear: both;
+			margin-bottom: 0 !important;
+		}
 	</style>
 {% endblock custom_head_tags %}
 
@@ -77,7 +82,7 @@
 					<div class="content">
 						<h3 class="header">{{item.name}}</h3>
 						{% for dt in item.dates %}
-							<p class="right floated">{{dt.start}} — {{dt.end}}</p>
+							<p class="dates item right floated">{{dt.start}} — {{dt.end}}</p>
 						{% endfor %}
 						<div class="meta">
 							<h5 class="sub header">{{item.name2}}</h5>
