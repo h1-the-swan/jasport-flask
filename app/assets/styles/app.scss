@@ -46,11 +46,13 @@ table.selectable tr:hover {
   #page-header {
     margin-top: 4em;
   }
-  #page-header h1 {
-    font-size: 60px;
+  #page-header .header {
+    // font-size: 60px;
+    font-size: 3rem;
   }
-  #page-header span {
-    font-size: 20px;
+  #page-header .sub.header {
+    // font-size: 20px;
+    font-size: 1.2rem;
     color: grey;
   }
   
@@ -70,7 +72,7 @@ table.selectable tr:hover {
   #article .four.wide.column .ui.list .item {
     font-size: 14px;
   }
-	
+
 	ul {
 		list-style-type: none;
 		margin: 0;
@@ -80,3 +82,105 @@ table.selectable tr:hover {
   .ui.footer.segment {
     margin-bottom: 0;
   }
+
+
+  // @media print {
+  //   @page { margin: 0 !important; }
+  //   body { margin: 1.6cm; !important }
+  //   #page-header img { display: none; }
+  // }
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ * 
+ * This file contains only the print styles from the HTML5 Boilerplate
+ * project. See <https://github.com/h5bp/html5-boilerplate> for more
+ * information on the main project.
+ */
+
+/* ==========================================================================
+   Print styles.
+   ========================================================================== */
+
+@media print {
+    *,
+    *:before,
+    *:after {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster:
+                                   http://www.sanbeiji.com/archives/953 */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+
+    a[href^="#"]:after,
+    a[href^="javascript:"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    /*
+     * Printing Tables:
+     * http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3,
+	  .header	{
+        page-break-after: avoid;
+    }
+
+		.item {
+				page-break-inside: avoid;
+		}
+
+
+		// .grid, .row, .item {
+		// 	display: block !important;
+		// }
+}

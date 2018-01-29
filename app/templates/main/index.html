@@ -2,21 +2,7 @@
 
 {% block content %}
 <div class="ui stackable grid container">
-	<div class="row" id="page-header">
-		<div class="eleven wide column">
-			<div class="ui basic segment">
-				<h1 class="ui sub header">
-					Jason Portenoy
-				</h1>
-				<span>PhD candidate in the <a href="https://ischool.uw.edu/" target="_blank">University of Washington Information School</a>.</span>
-				<p>Advised by <a href="http://www.jevinwest.org/" target="_blank">Jevin West</a>.</p>
-				<p>network analysis | scholarly data | data science</p>
-			</div>
-		</div>
-		<div class="four wide right floated column">
-			<img class="ui small image" src="{{url_for('static', filename='images/jason-datalab-headshot.jpg')}}" alt="Jason Portenoy"/>
-		</div>
-	</div>
+	{% include "main/page_header.html" %}
 
 	<div class="row" id="content">
 		<div class="eleven wide column">

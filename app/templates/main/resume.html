@@ -1,45 +1,117 @@
 {% extends 'layouts/base.html' %}
 
 {% block custom_head_tags %}
-	<style type="text/css" media="screen">
+	<style type="text/css">
+
+		#page-header #adviser {
+			display: none;
+		}
+
 		.container.resume .row {
 			max-width: 90%;
 		}
 		
 		.resume ul {
 			list-style-type: disc;
-			list-style-position: inside;
+			list-style-position: outside;
+			margin-left: 1.2em;
 		}
 
 		.resume .dates {
 			clear: both;
 			margin-bottom: 0 !important;
 		}
+
+		@media only screen and (max-device-width: 767px) {
+			.resume * {
+				clear: both;
+				float: left !important;
+			}
+
+			
+		}
+
+		@media only screen and (min-device-width: 768px) and (max-device-width: 991px) {
+			#resume .section-label {
+				font-size: .9rem;
+			}
+			
+		}
+
+		@media print {
+			@page {
+				margin: 1.5cm;
+			}
+
+			#page-header {
+				margin-top: 0;
+			}
+
+			#page-header .headshot {
+			  display: none;
+			}
+
+			#page-header .column {
+				width: 80% !important;
+			}
+
+			#resume .column {
+				padding-right: 0 !important;
+			}
+
+			#resume .section-label.column {
+				width: 15% !important;
+				padding-right: 1em!important;
+				padding-left: 0 !important;
+				border-right: 1px solid #dbdbdb;
+				text-align: right;
+			}
+
+			#resume .right.column {
+			  width: 85% !important;
+				padding-left: 1.5em !important;
+				margin-left: 0 !important;
+			}
+
+			#resume .section-label h3 {
+				font-size: 10pt;
+			}
+
+			#resume .dates {
+				font-size: 9pt;
+				color: #969696 !important
+			}
+
+			a,
+			a:visited {
+					text-decoration: none;
+			}
+
+			a[href]:after {
+					content: "";
+			}
+
+			#resume li {
+				font-size: 10pt;
+			}
+
+			
+			
+		}
+
+
 	</style>
+
 {% endblock custom_head_tags %}
 
 {% block content %}
 	
-<div class="ui stackable centered grid container resume">
-	<div class="row" id="page-header">
-		<div class="eleven wide column">
-			<div class="ui basic segment">
-				<h1 class="ui sub header">
-					Jason Portenoy
-				</h1>
-				<span>PhD candidate in the <a href="https://ischool.uw.edu/" target="_blank">University of Washington Information School</a>.</span>
-				<p>Advised by <a href="http://www.jevinwest.org/" target="_blank">Jevin West</a>.</p>
-				<p>network analysis | scholarly data | data science</p>
-			</div>
-		</div>
-		<div class="four wide right floated column">
-			<img class="ui small image" src="{{url_for('static', filename='images/jason-datalab-headshot.jpg')}}" alt="Jason Portenoy"/>
-		</div>
-	</div>
+<div class="ui stackable centered grid container" id="resume">
+	{% include "main/page_header.html" %}
 
 	<div class="resume divided row" id="resume-education">
-		<div class="two wide column">
-			<h3 class="header">Education</h3>
+		<div class="section-label two wide column">
+			<h3 class="section-label header">Education</h3>
 		</div>
 
 		<div class="fourteen wide right floated column">
@@ -49,7 +121,7 @@
 					<div class="content">
 						<h3 class="header">{{item.name}}</h3>
 						{% for dt in item.dates %}
-							<p class="right floated">{{dt.start}} — {{dt.end}}</p>
+							<p class="dates right floated">{{dt.start}} — {{dt.end}}</p>
 						{% endfor %}
 						<div class="meta">
 							<h5 class="sub header">{{item.name2}}</h5>
@@ -71,8 +143,8 @@
 
 
 	<div class="resume divided row" id="resume-work">
-		<div class="two wide column">
-			<h3 class="header">Work Experience</h3>
+		<div class="section-label two wide column">
+			<h3 class="section-label header">Work Experience</h3>
 		</div>
 
 		<div class="fourteen wide right floated column">
@@ -103,8 +175,8 @@
 
 
 	<div class="resume divided row" id="resume-skills">
-		<div class="two wide column">
-			<h3 class="header">Skills</h3>
+		<div class="section-label two wide column">
+			<h3 class="section-label header">Skills</h3>
 		</div>
 
 		<div class="fourteen wide right floated column">
